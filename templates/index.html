@@ -2,23 +2,46 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='logo.png') }}">
     <title>Astute AI</title>
 </head>
 <body>
-  <h1 class="neon-blue">Astute AI</h1>
+  <img src="{{ url_for('static', filename='logo.png') }}" width="270px" height="300px" style="padding: 20px;" alt="Logo">
   <form method="post" action="/submit">
-    <input type="text" id="prompt" name="prompt" placeholder="Prompt..."><br>
+    <input type="text" id="prompt" name="prompt" placeholder="Ask away... I'm smarter than you think!"><br>
     <div class="buttonHolder">
       <input type="submit" value="Submit">
     </div>
   </form>
   {% autoescape false %}
   {% if response=="" %}
-  <div class="text-container" style="padding: 100px 0px 100px 0px; margin: 100px;"><label>{{response}}</label></div>
+  <div class="text-container" style="padding: 50px 20px 30px 20px; margin: 40px;"><label>
+      🌟 Astute AI is a smart AI tool designed to help users in a variety of tasks.<br><br>
+      🌟 It uses advanced AI and Natural Language Processing to understand user queries and respond with relevant information in a conversational manner.<br><br>
+      🌟 With its simple yet intuitive user interface and deep understanding of user needs.<br><br><br>
+      🚀 Ask it do to anything… and you won’t be disappointed 🤯<br><br>
+  </label></div>
   {% else %}
-  <div class="text-container" style="padding: 20px; margin: 100px 0px 0px 0px;"><label>{{response}}<br><br></label></div>
+  <div class="text-container" style="padding: 20px; margin: 40px 0px 40px 0px;"><label>{{response}}<br><br></label></div>
   {% endif %}
   {% endautoescape %}
+
+  <script
+			src="https://kit.fontawesome.com/50cde61edc.js"
+			crossorigin="anonymous"
+		></script>
+<div class="credits" style="padding: 20px">
+				<i class="fa-solid fa-code"></i> Designed & Coded by
+				<b
+					><a
+						href="https://linktr.ee/raihankhan_rk"
+						target="_blank"
+						rel="noreferrer"
+						class="social-links"
+						>Raihan Khan</a
+					></b
+				>
+			</div>
 </body>
 
   <style>
@@ -80,6 +103,11 @@
     .buttonHolder {
       text-align: center;
     }
+
+    .social-links {
+        color: #04ADFF;
+        text-decoration:none;
+        }
 
   </style>
 </html>
