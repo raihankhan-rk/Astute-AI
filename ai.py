@@ -23,17 +23,6 @@ def submit():
     resp["choices"][0]["text"] = resp["choices"][0]["text"].replace('\n', '<br>')
     return render_template('index.html', response=resp["choices"][0]["text"])
 
-# prompt = input("Prompt: ")
-#
-# resp = openai.Completion.create(
-#   model="text-davinci-003",
-#   prompt=prompt,
-#   max_tokens=400,
-#   temperature=0.9,
-# )
-#
-# #print(resp)
-# print(resp["choices"][0]["text"])
 
 if __name__ == '__main__':
     app.run(debug=True)
