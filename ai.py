@@ -1,9 +1,13 @@
-from flask import Flask, render_template, redirect, request, url_for
+from flask import Flask, render_template, request
+from dotenv import load_dotenv
+import os
 import openai
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = "8BYkEfBA6O6donzWlSihBXox7C0sKR6b"
-openai.api_key = "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"
+load_dotenv()
+app.config['SECRET_KEY'] = os.environ.get('app_secret_key')
+openai.api_key = os.environ.get('open_ai_api_key')
+
 
 @app.route("/")
 def home():
