@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Astute AI</title>
+</head>
+<body>
+  <h1 class="neon-blue">Astute AI</h1>
+  <form method="post" action="/submit">
+    <input type="text" id="prompt" name="prompt" placeholder="Prompt..."><br>
+    <input type="submit" value="Submit">
+  </form>
+  {% autoescape false %}
+  {% if response=="" %}
+  <div class="text-container" style="padding: 100px 0px 100px 0px; margin: 100px;"><label>{{response}}</label></div>
+  {% else %}
+  <div class="text-container" style="padding: 20px; margin: 100px 0px 0px 0px;"><label>{{response}}<br><br></label></div>
+  {% endif %}
+  {% endautoescape %}
+</body>
+
+  <style>
+    /* Set background to dark color */
+    body {
+      background-color: #111827;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    /* Set neon green color accent */
+    .neon-blue {
+      color: #04ADFF;
+    }
+
+    /* Style text input field */
+    input[type="text"] {
+      border: 2px solid #04ADFF;
+      background-color: #111827;
+      color: #fff;
+      border-radius: 5px;
+      padding: 20px;
+      margin: 20px;
+      width: 500px;
+      max-height: 500px;
+    }
+
+    /* Style submit button */
+    input[type="submit"] {
+      border: 2px solid #04ADFF;
+      border-radius: 50px;
+      background-color: #111827;
+      color: #04ADFF;
+      font-size: 20px;
+      padding: 10px 20px;
+      margin: 20px 20px 20px 0px;
+    }
+
+    /* Add hover effect to submit button */
+    input[type="submit"]:hover {
+      background-color: #04ADFF;
+      color: #333;
+      cursor: pointer;
+    }
+
+    /* Style container for displaying text */
+    .text-container {
+      border: 2px solid #04ADFF;
+      border-radius: 5px;
+      width: 500px;
+      max-height: 500px;
+      overflow-y: auto; /* Add scrollbar if text exceeds container height */
+    }
+  </style>
+</html>
