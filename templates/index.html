@@ -8,9 +8,9 @@
 <body>
   <img src="{{ url_for('static', filename='logo.png') }}" width="270px" height="300px" style="padding: 20px;" alt="Logo">
   <form method="post" action="/submit">
-    <input type="text" id="prompt" name="prompt" placeholder="Ask away... I'm smarter than you think!"><br>
+    <input type="text" id="prompt" name="prompt" placeholder="Type here... Ask away anything... I'm smarter than you think!"><br>
     <div class="buttonHolder">
-      <input type="submit" value="Submit">
+      <input type="submit" value="Ask">
     </div>
   </form>
   {% autoescape false %}
@@ -68,7 +68,8 @@
       border-radius: 5px;
       padding: 12px;
       margin: 20px;
-      font-size: 20px;
+      font-size: 17px;
+      text-align: center;
       width: 500px;
       max-height: 500px;
     }
