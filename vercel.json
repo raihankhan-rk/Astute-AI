@@ -6,6 +6,6 @@
         "use": "@vercel/python"
     }],
     "routes": [
-        { "src": "(.*)", "dest": "ai.py" }
+        { "src": "/(.*)", "dest": "/" }
     ]
 }
