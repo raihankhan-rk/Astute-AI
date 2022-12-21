@@ -3,20 +3,18 @@ from dotenv import load_dotenv
 import os
 import openai
 
-app = Flask(__name__, template_folder="templates")
+app = Flask(__name__)
 load_dotenv()
 app.config['SECRET_KEY'] = os.environ.get('app_secret_key')
 openai.api_key = os.environ.get('open_ai_api_key')
 
 
 @app.route("/")
-
 def home():
     return render_template("index.html", response="")
 
 
 @app.route('/submit', methods=['POST'])
-
 def submit():
     prompt = request.form['prompt']
     resp = openai.Completion.create(
