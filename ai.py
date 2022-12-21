@@ -11,7 +11,15 @@ openai.api_key = os.environ.get('open_ai_api_key')
 
 @app.route("/")
 def home():
-  return render_template("index.html", response="")
+    prompt = "How to scrape data from Twitter?"
+    resp = openai.Completion.create(
+        model="text-davinci-003",
+        prompt=prompt,
+        max_tokens=1200,
+        temperature=0.9,
+    )
+    resp["choices"][0]["text"] = resp["choices"][0]["text"].replace('\n', '<br>')
+    return render_template("index.html", response=resp["choices"][0]["text"])
 
 @app.route('/submit', methods=['POST'])
 def submit():
