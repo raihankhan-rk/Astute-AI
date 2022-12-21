@@ -26,6 +26,8 @@ def submit():
     resp["choices"][0]["text"] = resp["choices"][0]["text"].replace('\n', '<br>')
     return render_template('index.html', response=resp["choices"][0]["text"])
 
+#experimenting
+
 
 if __name__ == '__main__':
     app.run(debug=True)
