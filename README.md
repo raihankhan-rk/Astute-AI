@@ -1,6 +1,6 @@
 # Astute-AI
 
-- Live Link - https://astuteai.onrender.com
+- Live Link - https://astute-ai.vercel.app/
 
 ---
 
