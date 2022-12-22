@@ -20,12 +20,11 @@ def submit():
     resp = openai.Completion.create(
         model="text-davinci-003",
         prompt=prompt,
-        max_tokens=1200,
+        max_tokens=3300,
         temperature=0.9,
     )
     resp["choices"][0]["text"] = resp["choices"][0]["text"].replace('\n', '<br>')
     return render_template('index.html', response=resp["choices"][0]["text"])
-
 
 
 if __name__ == '__main__':
