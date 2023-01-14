@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 from dotenv import load_dotenv
 import os
 import openai
@@ -24,6 +24,10 @@ def home():
 
     return render_template("index.html", response="")
 
+@app.route("/api", methods=["GET"])
+def api():
+    data = {"status": "success", "message": {"name": "Raihan Khan", "isPresent": True}}
+    return jsonify(data)
 
 if __name__ == '__main__':
     app.run(debug=True)
