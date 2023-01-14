@@ -1,6 +1,6 @@
 # Astute-AI
 
-- Live Link - https://astute-ai.vercel.app/
+- Live Link - https://astuteai.raihankhan.dev/
 
 ---
 
