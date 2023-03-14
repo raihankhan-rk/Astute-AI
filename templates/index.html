@@ -2,26 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='logo.png') }}">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='astlogo.png') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> -->
+    <link href="../dist/output.css" rel="stylesheet">
+  </head>
     <title>Astute AI</title>
 <body>
-  <img src="{{ url_for('static', filename='logo.png') }}" width="270px" height="300px" style="padding: 20px;" alt="Logo">
+  <!-- <img src="{{ url_for('static', filename='astlogo.png') }}" width="270px" height="300px" style="padding: 20px;" alt="Logo"> -->
+  <img src="../static/astlogo.png" width="270px" height="300px" style="padding: 20px; margin-top: 100px;" alt="Logo">
   <form method="post" action="/">
     <input type="text" id="prompt" name="prompt" placeholder="Type here... Ask away anything... I'm smarter than you think!"><br>
     <div class="buttonHolder">
-      <input type="submit" value="Ask">
+      <input type="submit" class="button" value="Ask Me">
     </div>
   </form>
   {% autoescape false %}
   {% if response=="" %}
-  <div class="text-container" style="padding: 50px 20px 30px 20px; margin: 40px;"><label>
+  <div class="text-container" style="padding: 50px 20px 30px 20px; margin: 40px;">
+    <h3 style="margin: 20px; font-weight: 400;">
       🌟 Astute AI is a smart AI tool designed to help users in a variety of tasks.<br><br>
       🌟 It uses advanced AI and Natural Language Processing to understand user queries and respond with relevant information in a conversational manner.<br><br>
       🌟 With its simple yet intuitive user interface and deep understanding of user needs.<br><br><br>
-      🚀 Ask it do to anything… and you won’t be disappointed 🤯<br><br>
-  </label></div>
+      🚀 Ask it do to anything… and you won't be disappointed 🤯<br><br>
+    </h3>
+</div>
   {% else %}
-  <div class="text-container" style="padding: 20px; margin: 40px 0px 40px 0px;"><label>{{response}}<br><br></label></div>
+  <div class="text-container" style="padding: 50px 20px 30px 20px; margin: 40px;"><label>{{response}}<br><br></label></div>
   {% endif %}
   {% endautoescape %}
 
@@ -31,13 +40,22 @@
 		></script>
 <div class="credits" style="padding: 20px; font-size: 15px;">
 				<i class="fa-solid fa-code"></i> Designed & Developed by
-				<b
-					><a
+				<b>
+          <a
 						href="https://linktr.ee/raihankhan_rk"
 						target="_blank"
 						rel="noreferrer"
 						class="social-links"
 						>Raihan Khan</a
+					></b
+				> &
+        <b>
+          <a
+						href="https://linktr.ee/sayaks"
+						target="_blank"
+						rel="noreferrer"
+						class="social-links"
+						>Sayak Sarkar</a
 					></b
 				>
 			</div>
@@ -46,7 +64,8 @@
   <style>
     /* Set background to dark color */
     body {
-      background-color: #111827;
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(140deg, rgba(0,0,0,1) 0%, rgba(37,45,77,1) 100%);
       color: white;
       display: flex;
       justify-content: center;
@@ -54,17 +73,16 @@
       flex-direction: column;
     }
 
-    /* Set neon green color accent */
-    .neon-blue {
-      color: #04ADFF;
-    }
-
     /* Style text input field */
     input[type="text"] {
-      border: 2px solid #04ADFF;
-      background-color: #111827;
-      color: #fff;
-      border-radius: 5px;
+      border-left: 5px solid #04ADFF;
+      border-right: 5px solid #04ADFF;
+      border-top: none;
+      border-bottom: none;
+      background-color: #1c263c;
+      color: #15c1ff;
+      border-radius: 50px;
+      height: 30px;
       padding: 12px;
       margin: 20px;
       font-size: 17px;
@@ -75,11 +93,13 @@
 
     /* Style submit button */
     input[type="submit"] {
-      border: 2px solid #04ADFF;
       border-radius: 50px;
-      background-color: #111827;
-      color: #04ADFF;
+      background: rgb(0,69,166);
+      background: linear-gradient(140deg, rgba(0,69,166,1) 0%, rgba(70,139,244,1) 100%);
+      color: #ffffff;
       font-size: 20px;
+      width: 150px;
+      border: none;
       padding: 10px 20px;
       margin: 20px 20px 20px 0px;
     }
@@ -93,9 +113,13 @@
 
     /* Style container for displaying text */
     .text-container {
-      border: 2px solid #04ADFF;
-      border-radius: 5px;
+      border: 0px solid #04ADFF;
+      background-color: #1c263c;
+      border-top: 5px solid #04ADFF;
+      color: #FFF;
+      border-radius: 20px;
       width: 500px;
+      max-width: 500px;
       max-height: 500px;
       overflow-y: auto; /* Add scrollbar if text exceeds container height */
     }
@@ -105,9 +129,9 @@
     }
 
     .social-links {
-        color: #04ADFF;
-        text-decoration:none;
-        }
+      color: #04ADFF;
+      text-decoration:none;
+      }
 
   </style>
 </html>
