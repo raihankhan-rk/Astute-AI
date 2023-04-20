@@ -14,14 +14,14 @@ def home():
     if request.method == 'POST':
         try:
             prompt = request.form['prompt']
-            resp = openai.ChatCompletion.create(
-                model="gpt-3.5-turbo",
-                messages=[
-                    {"role": "user", "content": prompt}
-                ]
+            resp = openai.Completion.create(
+                model="text-davinci-003",
+                prompt=prompt,
+                max_tokens=3300,
+                temperature=0.9,
             )
-            resp.choices[0].message.content = resp.choices[0].message.content.replace('\n', '<br>')
-            return render_template('index.html', response=resp.choices[0].message.content)
+            resp["choices"][0]["text"] = resp["choices"][0]["text"].replace('\n', '<br>')
+            return render_template('index.html', response=resp["choices"][0]["text"])
         except:
             return render_template('index.html', response="Oops! Looks like the AI taking too much time te respond. Please retry.")
 
